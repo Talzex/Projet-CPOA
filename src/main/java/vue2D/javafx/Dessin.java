@@ -18,9 +18,13 @@ public class Dessin extends Canvas {
     
     private Collection<ISprite> sprites;
     private ILabyrinthe labyrinthe;
-    private int unite = 15;
+    private final int unite = 15;
     private GraphicsContext tampon;
-    private Image solImage;
+    private Image murImage;
+    private Image sortieImage;
+    private Image sallesImage;
+    private Image entreeImage;
+    
    
     public Dessin(ILabyrinthe labyrinthe, Collection<ISprite> sprites)
     {
@@ -30,16 +34,38 @@ public class Dessin extends Canvas {
         setHeight(labyrinthe.getHauteur()*unite);
         tampon = this.getGraphicsContext2D();
         chargementImages();
-        dessinFond(); 
+        dessinFond();
     }
     
      public void chargementImages(){
-    	solImage = new Image("file:icons/pyramide.jpg");
+    	murImage = new Image("file:icons/mur0.gif");
+        entreeImage = new Image("file:icons/groundP.gif");
+        sortieImage = new Image("file:icons/sortie.gif");
+        sallesImage = new Image("file:icons/ground.gif");
     }
-    
-    public void dessinFond(){
-        tampon.drawImage(solImage,0,0,unite*labyrinthe.getLargeur(),
-                unite*labyrinthe.getHauteur());
+
+    public void dessinFond() {
+        //Dessin Mur
+        for(int i = 0; i < labyrinthe.getLargeur(); i++){
+            for(int j = 0; j < labyrinthe.getHauteur(); j++){
+                tampon.drawImage(murImage,unite*i,unite*j);
+            }
+        }
+        
+        //Dessin Salles
+        for(ISalle salles : labyrinthe){
+            tampon.drawImage(sallesImage,unite*salles.getX(),unite*salles.getY());
+        }
+        
+        //Dessin Entree
+        ISalle entree = labyrinthe.getEntree();
+        tampon.drawImage(entreeImage,unite*entree.getX(), unite*entree.getY());
+        
+        //Dessin Sortie
+        ISalle sortie = labyrinthe.getSortie();
+        tampon.drawImage(sortieImage,unite*sortie.getX(), unite*sortie.getY());
+        
+        
     }
 
 }
