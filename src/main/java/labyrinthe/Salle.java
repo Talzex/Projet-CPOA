@@ -31,7 +31,7 @@ public class Salle implements ISalle{
 
     @Override
     public boolean estAdjacente(ISalle autre) {
-        return false;
+        return (this.x - autre.getX() >= -1 && this.x - autre.getX() <= 1 && this.y - autre.getY() >= -1 && this.y - autre.getY() <= 1);
     }
     
 }
