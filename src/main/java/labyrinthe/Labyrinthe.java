@@ -57,7 +57,14 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
 
     @Override
     public Collection<ISalle> sallesAccessibles(IPersonnage bob) {
-        return null;
+        ISalle coordbob = bob.getPosition();
+        ArrayList<ISalle> SallesAcc = new ArrayList<>();
+        for (ISalle sallesAcc : this) {
+            if(coordbob.estAdjacente(sallesAcc)){
+                SallesAcc.add(sallesAcc);
+            }
+        }
+        return SallesAcc;
     }
 
     @Override

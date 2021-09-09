@@ -14,3 +14,6 @@ Cette séance j'ai fais le niveau 6, j'ai eu dû mal à me lancé pour savoir de
 
 ## 5 - Seance 5 (08/09/2021 10h20 à 12h15)
 Durant le début de cette séance j'ai fais le niveau 7, que j'avais commencé avant la séance. Je suis ensuite passé au niveau 8, que j'ai trouvé plutôt simple c'est pour quoi il ne m'a pas pris beaucoup de temps. J'ai attaqué le niveau 9, qui n'était pas non plus compliqué je suis plutôt à l'aise avec les exceptions. Pour finir j'a commencé le niveau 10, en effet nous avions déjà traité à travers différent projet la problématique de gérer des coordonnées adjacentes, il ne me manque que d'adapter la classe Labyrinthe.
+
+## Travail hors Seance (09/06/2021 14h00 à 16h30)
+J'ai adapter la classe Labyrinthe, j'ai pu donc valider le niveau 10, je suis passé au niveau 11, mais je n'ai pas compris qu'est-ce qu'il fallait mettre dans les deux méthodes à implémenter. Je suis donc passé au niveau 12 que j'ai terminé rapidement. Au niveau 13 ça se complique il y a beaucoup de chose à faire, surtout à deviner. J'ai passé beaucoup de temps à comprendre ce qu'on nous demandé, mais à force j'y suis arrivé. J'ai commencé le niveau 14, mais j'attends confirmation durant la séance de demain de ce que j'ai fais aujourd'hui.
