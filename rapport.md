@@ -17,3 +17,6 @@ Durant le début de cette séance j'ai fais le niveau 7, que j'avais commencé a
 
 ## Travail hors Seance (09/06/2021 14h00 à 16h30)
 J'ai adapter la classe Labyrinthe, j'ai pu donc valider le niveau 10, je suis passé au niveau 11, mais je n'ai pas compris qu'est-ce qu'il fallait mettre dans les deux méthodes à implémenter. Je suis donc passé au niveau 12 que j'ai terminé rapidement. Au niveau 13 ça se complique il y a beaucoup de chose à faire, surtout à deviner. J'ai passé beaucoup de temps à comprendre ce qu'on nous demandé, mais à force j'y suis arrivé. J'ai commencé le niveau 14, mais j'attends confirmation durant la séance de demain de ce que j'ai fais aujourd'hui.
+
+## 6 - Seance 6 (10/09/2021 8h00 à 10h00)
+J'ai terminé le niveau 14, mais j'ai rencontré des difficultés, notamment le fait qu'il fallait mettre un attribut de la classe Héros, qui n'était spécifier. J'ai donc chercher pendant quelques temps, je suis ensuite passé au niveau 15. Mais en lançant le programme, j'ai des erreurs de code, j'ai donc passer le reste de la séance à les vérifier.

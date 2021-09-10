@@ -29,7 +29,7 @@ public abstract class ASprite implements ISprite {
 
     @Override
     public void dessiner(GraphicsContext g) {
-        g.drawImage(Isprite, unite * sprite.getPosition().getX(), unite * sprite.getPosition().getX());
+        g.drawImage(Isprite, unite * sprite.getPosition().getX(), unite * sprite.getPosition().getY());
     }
 
     @Override
