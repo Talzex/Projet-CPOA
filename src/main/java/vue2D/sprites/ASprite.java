@@ -18,7 +18,8 @@ import labyrinthe.Salle;
 public abstract class ASprite implements ISprite {
 
     public IPersonnage sprite;
-    public Image Isprite;
+    public Image ILinksprite;
+    public Image IMonstresprite;
     public ILabyrinthe labyrinthe;
     private final int unite = 15;
 
@@ -29,7 +30,8 @@ public abstract class ASprite implements ISprite {
 
     @Override
     public void dessiner(GraphicsContext g) {
-        g.drawImage(Isprite, unite * sprite.getPosition().getX(), unite * sprite.getPosition().getY());
+        g.drawImage(ILinksprite, unite * sprite.getPosition().getX(), unite * sprite.getPosition().getY());
+        g.drawImage(IMonstresprite, unite * sprite.getPosition().getX(), unite * sprite.getPosition().getY());
     }
 
     @Override

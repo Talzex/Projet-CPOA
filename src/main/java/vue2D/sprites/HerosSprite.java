@@ -31,7 +31,7 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     }
 
     public void chargementImages(){
-    	Isprite = new Image("file:icons/link/LinkRunShieldD1.gif");
+    	ILinksprite = new Image("file:icons/link/LinkRunShieldD1.gif");
     }
     
     @Override
@@ -39,16 +39,20 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
         
         switch(event.getCode()){
             case LEFT:
-                heros.setPosition(new Salle(sprite.getPosition().getX()-1,sprite.getPosition().getY()));
+                heros.salleChoisie = new Salle(sprite.getPosition().getX()-1,sprite.getPosition().getY());
+                ILinksprite = new Image("file:icons/link/LinkRunShieldL1.gif");
                 break;
             case RIGHT:
-                heros.setPosition(new Salle(sprite.getPosition().getX()+1,sprite.getPosition().getY()));
+                heros.salleChoisie = new Salle(sprite.getPosition().getX()+1,sprite.getPosition().getY());
+                ILinksprite = new Image("file:icons/link/LinkRunR1.gif");
                 break;
             case UP:
-                heros.setPosition(new Salle(sprite.getPosition().getX(),sprite.getPosition().getY()-1));
+                heros.salleChoisie = new Salle(sprite.getPosition().getX(),sprite.getPosition().getY()-1);
+                ILinksprite = new Image("file:icons/link/LinkRunU1.gif");
                 break;
             case DOWN:
-                heros.setPosition(new Salle(sprite.getPosition().getX(),sprite.getPosition().getY()+1));
+                heros.salleChoisie = new Salle(sprite.getPosition().getX(),sprite.getPosition().getY()+1);
+                ILinksprite = new Image("file:icons/link/LinkRunShieldD1.gif");
                 break;
             
         }

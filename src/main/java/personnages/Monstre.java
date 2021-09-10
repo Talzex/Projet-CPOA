@@ -7,27 +7,22 @@ package personnages;
 
 import java.util.Collection;
 import labyrinthe.ISalle;
-
+import java.util.Random;
 /**
  *
  * @author tduthil
  */
-public class Heros extends APersonnage {
+public class Monstre extends APersonnage{
 
-    public ISalle salleChoisie;
-
-    public Heros(ISalle salle){
+    public ISalle salleAleatoire;
+    Random rand = new Random();
+    public Monstre(ISalle salle){
         this.position = salle;
  
     }
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
-        if (sallesAccessibles.contains(salleChoisie)) {
-            this.position = salleChoisie;
-            return salleChoisie;
-        } else {
-            return this.getPosition();
-        }
-
+     return (ISalle)sallesAccessibles.toArray()[rand.nextInt(sallesAccessibles.size())];
     }
+    
 }

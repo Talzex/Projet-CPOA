@@ -15,17 +15,17 @@ import labyrinthe.ISalle;
  */
 public abstract class APersonnage implements IPersonnage {
     
-    public ISalle salle;
+    public ISalle position;
    @Override
     // renvoie sa position courante
     public ISalle getPosition(){
-        return salle;
+        return position;
     }
     
     @Override
     // definit sa position courante
     public void setPosition( ISalle s){
-        salle = s;
+        position = s;
     }
     
 }
