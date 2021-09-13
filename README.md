@@ -49,4 +49,9 @@ Complété 10/09/2021 14h30
 Complété 10/09/2021 15h00
 
 ## Niveau 17 :
-En cours
+Complété 13/09/2021 14h15
+
+## Niveau 18 :
+Complété 13/09/2021 14h20
+
+## Niveau 19 :

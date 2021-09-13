@@ -6,15 +6,12 @@
 package vue2D.sprites;
 
 
-import java.util.Collection;
 import javafx.event.EventHandler;
-
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
 import personnages.IPersonnage;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
-import labyrinthe.Salle;
 import personnages.Heros;
 
 /**

@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
@@ -15,8 +16,10 @@ import vue2D.sprites.MonstreSprite;
  * @author INFO Professors team
  */
 public class Core {
+
     ISprite heros;
     ISprite monstre;
+    ArrayList<ISprite> personnages = new ArrayList<>();
     ILabyrinthe labyrinthe;
 
     protected void initLabyrinthe() {
@@ -30,10 +33,14 @@ public class Core {
         IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
         this.heros = new HerosSprite(h, labyrinthe);
         vue.add(this.heros);
-        IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
-        this.monstre = new MonstreSprite(m, labyrinthe);
-        vue.add(this.monstre);
-        
+        personnages.add(heros);
+        for (int i = 0; i < 10; i++) {
+            IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
+            this.monstre = new MonstreSprite(m, labyrinthe);
+            personnages.add(monstre);
+            vue.add(this.monstre);
+        }
+
     }
 
     protected void jeu(IVue vue) {
