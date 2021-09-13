@@ -28,3 +28,4 @@ Durant cette séance j'ai à la fois tenté de faire fonctionner correctement le
 Avec Julian, nous avons trouvé la solution pour déplacer le personnage et donc le monstre. L'erreur provenait d'une mauvaise interprétation du niveau où il fallait implémenter à la fois les méthodes de la classe ISprite ET IPersonnage dans la classe ASprite. Cette erreur m'a coûté environ 3 séances, mais j'ai de tout même fais des niveaux en parallèle de ce problème.
 
 ## 9 - Seance 9 (13/09/2021 14h00 à 16h00)
+Durant cette séance j'ai éffectué les derniers niveaux de l'objectif 4, je suis à l'objectif qui semble beaucoup plus dur. J'ai commencé l'exercice 19, mais je l'ai trouvé difficile.
