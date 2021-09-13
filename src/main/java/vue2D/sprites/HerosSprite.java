@@ -31,48 +31,37 @@ public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     }
 
     public void chargementImages(){
-    	ILinksprite = new Image("file:icons/link/LinkRunShieldD1.gif");
+    	spriteImg = new Image("file:icons/link/LinkRunShieldD1.gif");
     }
     
     @Override
     public void handle(KeyEvent event) {
         
+        int x = heros.getPosition().getX();
+        int y = heros.getPosition().getY();
         switch(event.getCode()){
             case LEFT:
-                heros.salleChoisie = new Salle(sprite.getPosition().getX()-1,sprite.getPosition().getY());
-                ILinksprite = new Image("file:icons/link/LinkRunShieldL1.gif");
+                x--;
+                spriteImg = new Image("file:icons/link/LinkRunShieldL1.gif");
                 break;
             case RIGHT:
-                heros.salleChoisie = new Salle(sprite.getPosition().getX()+1,sprite.getPosition().getY());
-                ILinksprite = new Image("file:icons/link/LinkRunR1.gif");
+                x++;
+                spriteImg = new Image("file:icons/link/LinkRunR1.gif");
                 break;
             case UP:
-                heros.salleChoisie = new Salle(sprite.getPosition().getX(),sprite.getPosition().getY()-1);
-                ILinksprite = new Image("file:icons/link/LinkRunU1.gif");
+                y--;
+                spriteImg = new Image("file:icons/link/LinkRunU1.gif");
                 break;
             case DOWN:
-                heros.salleChoisie = new Salle(sprite.getPosition().getX(),sprite.getPosition().getY()+1);
-                ILinksprite = new Image("file:icons/link/LinkRunShieldD1.gif");
+                y++;
+                spriteImg = new Image("file:icons/link/LinkRunShieldD1.gif");
                 break;
             
         }
-        heros.faitSonChoix(labyrinthe);
+        for(ISalle s : labyrinthe.sallesAccessibles(heros)){
+            if(s.getX() == x && s.getY() == y){
+                heros.salleChoisie = s;
+            }
+        }
     }
-    
-    @Override
-    public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public ISalle getPosition() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setPosition(ISalle s) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
 }

@@ -45,6 +45,8 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         hauteur = f.lireNombre();
         entree = new Salle(f.lireNombre(), f.lireNombre());
         sortie = new Salle(f.lireNombre(), f.lireNombre());
+        this.add(entree);
+        this.add(sortie);
 
         int nextint = f.lireNombre();
         while (nextint != -1) {

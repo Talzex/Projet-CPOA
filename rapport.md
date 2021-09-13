@@ -20,3 +20,9 @@ J'ai adapter la classe Labyrinthe, j'ai pu donc valider le niveau 10, je suis pa
 
 ## 6 - Seance 6 (10/09/2021 8h00 à 10h00)
 J'ai terminé le niveau 14, mais j'ai rencontré des difficultés, notamment le fait qu'il fallait mettre un attribut de la classe Héros, qui n'était spécifier. J'ai donc chercher pendant quelques temps, je suis ensuite passé au niveau 15. Mais en lançant le programme, j'ai des erreurs de code, j'ai donc passer le reste de la séance à les vérifier.
+
+## 7 - Seance 7 (10/09/2021 14h00 à 16h00)
+Durant cette séance j'ai à la fois tenté de faire fonctionner correctement le déplacement du personnages et afficher le monstre. J'ai réussi à afficher le monstre cependant je n'ai pas réussi à faire le déplacement correctement.
+
+## 8 - Seance 8 (13/09/2021 8h00 à 10h00)
+Avec Julian, nous avons trouvé la solution pour déplacer le personnage et donc le monstre. L'erreur provenait d'une mauvaise interprétation du niveau où il fallait implémenter à la fois les méthodes de la classe ISprite ET IPersonnage dans la classe ASprite. Cette erreur m'a coûté environ 3 séances, mais j'ai de tout même fais des niveaux en parallèle de ce problème.

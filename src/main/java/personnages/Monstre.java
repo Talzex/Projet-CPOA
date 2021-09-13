@@ -13,8 +13,6 @@ import java.util.Random;
  * @author tduthil
  */
 public class Monstre extends APersonnage{
-
-    public ISalle salleAleatoire;
     Random rand = new Random();
     public Monstre(ISalle salle){
         this.position = salle;
