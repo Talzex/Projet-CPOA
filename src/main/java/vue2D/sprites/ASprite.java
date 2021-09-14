@@ -23,10 +23,14 @@ public abstract class ASprite implements ISprite {
     public Image spriteImg;
     public ILabyrinthe labyrinthe;
     private final int unite = 15;
+    public int x = 0;
+    public int y = 0;
 
     public ASprite(IPersonnage sprite, ILabyrinthe labyrinthe) {
         this.sprite = sprite;
         this.labyrinthe = labyrinthe;
+        x = sprite.getPosition().getX() * unite;
+        y = sprite.getPosition().getX() * unite;
     }
 
     @Override
@@ -36,7 +40,8 @@ public abstract class ASprite implements ISprite {
 
     @Override
     public void setCoordonnees(int xpix, int ypix) {
-        sprite.setPosition(new Salle(xpix, ypix));
+        x += xpix;
+        y += ypix;
     }
 
     @Override

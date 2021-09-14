@@ -46,12 +46,51 @@ public class Core {
     protected void jeu(IVue vue) {
         // boucle principale
         ISalle destination = null;
+        int x = 0;
+        int y = 0;
         while (!labyrinthe.getSortie().equals(heros.getPosition())) {
             // choix et deplacement
             for (IPersonnage p : vue) {
+                ISprite p2 = (ISprite) p;
+                boolean enMouv = false;
                 Collection<ISalle> sallesAccessibles = labyrinthe.sallesAccessibles(p);
                 destination = p.faitSonChoix(sallesAccessibles); // on demande au personnage de faire son choix de salle
-                p.setPosition(destination); // deplacement
+                
+                if(!destination.equals(p.getPosition())){
+                    enMouv = true;
+                }
+                if (enMouv) {
+                    int unite = 15;
+                    int xdiff = p.getPosition().getX() - destination.getX();
+                    int ydiff = p.getPosition().getY() - destination.getY();
+                    
+                    if (ydiff < 0) {
+                        p2.setCoordonnees(0, 1);
+                        y++;
+                    }
+                    
+                    if (ydiff > 0) {
+                        p2.setCoordonnees(0, -1);
+                        y++;
+                    }
+                    
+                    if (xdiff < 0){
+                        p2.setCoordonnees(1, 0);
+                        x++;
+                    }
+                    
+                    if (xdiff > 0){
+                        p2.setCoordonnees(-1, 0);
+                        x++;
+                    }
+                    
+                    if (xdiff >= unite || ydiff >= unite) {
+                        enMouv = false;
+                        p.setPosition(destination);
+                        x = 0;
+                        y = 0;
+                    }
+                }
             }
             // detection des collisions
             boolean collision = false;
