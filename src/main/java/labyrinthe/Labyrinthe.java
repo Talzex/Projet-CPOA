@@ -20,6 +20,10 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
     private int largeur;
     private int hauteur;
 
+    /**
+     * Méthode permettant de créer un labyrinthe
+     * @param file, le fichier
+     */
     @Override
     public void creerLabyrinthe(String file) {
         Fichier f = null;
@@ -57,6 +61,12 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         }
     }
 
+    /**
+     * Méthode permettant à partir de la position d'un personnage, de determiner
+     * les salles qui sont à sa porter.
+     * @param bob, un personnage
+     * @return SallesAcc, une collection de ISalle accessibles au IPersonnage
+     */
     @Override
     public Collection<ISalle> sallesAccessibles(IPersonnage bob) {
         ISalle coordbob = bob.getPosition();
@@ -69,11 +79,19 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         return SallesAcc;
     }
 
+    /**
+     * Retourne la ISalle de l'entrée
+     * @return entree,une ISalle de l'entrée
+     */
     @Override
     public ISalle getEntree() {
         return entree;
     }
 
+    /**
+     * Retourne la ISalle de la sortie
+     * @return sortie,la ISalle de la sortie
+     */
     @Override
     public ISalle getSortie() {
         return sortie;
@@ -84,11 +102,19 @@ public class Labyrinthe extends ArrayList<ISalle> implements ILabyrinthe {
         return null;
     }
 
+    /**
+     * Retourne la largeur du Labyrinthe
+     * @return largeur,la valeur de la largeur
+     */
     @Override
     public int getLargeur() {
         return largeur;
     }
-
+    
+    /**
+     * Retourne la hauteur du Labyrinthe
+     * @return hauteur,la valeur de la hauteur
+     */
     @Override
     public int getHauteur() {
         return hauteur;

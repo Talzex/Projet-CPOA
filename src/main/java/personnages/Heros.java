@@ -16,10 +16,21 @@ public class Heros extends APersonnage {
 
     public ISalle salleChoisie;
 
+    /**
+     * Constructeur de la classe Heros
+     * @param salle, la salle où se trouve le héros
+     */
     public Heros(ISalle salle){
         this.position = salle;
  
     }
+
+    /**
+     * Méthode permettant de vérifier si la salle souhaitée par le joueur est
+     * bien accessible
+     * @param sallesAccessibles, la collection des sallesAccessibles pour le héros
+     * @return la salleChoisie si elle est accessible, la position actuelle si elle n'est pas.
+     */
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
         if (sallesAccessibles.contains(salleChoisie)) {

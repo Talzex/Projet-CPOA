@@ -21,16 +21,29 @@ import personnages.Heros;
 public class HerosSprite extends ASprite implements EventHandler<KeyEvent> {
     
     public Heros heros;
+
+    /**
+     * Constructeur de classe HerosSprite
+     * @param sprite, le sprite du heros
+     * @param labyrinthe, le labyrinthe
+     */
     public HerosSprite(IPersonnage sprite,ILabyrinthe labyrinthe ){
         super(sprite, labyrinthe);
         chargementImages();
         heros = (Heros) sprite;
     }
 
+    /**
+     * Méthode permettant de charger l'image du héros
+     */
     public void chargementImages(){
     	spriteImg = new Image("file:icons/link/LinkRunShieldD1.gif");
     }
     
+    /**
+     * Méthode permettant d'associer un déplacement en fonction du clavier
+     * @param event, la touche appuyer
+     */
     @Override
     public void handle(KeyEvent event) {
         

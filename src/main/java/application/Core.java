@@ -46,8 +46,7 @@ public class Core {
     protected void jeu(IVue vue) {
         // boucle principale
         ISalle destination = null;
-        int x = 0;
-        int y = 0;
+        int nbTour = 0;
         while (!labyrinthe.getSortie().equals(heros.getPosition())) {
             // choix et deplacement
             for (IPersonnage p : vue) {
@@ -66,29 +65,28 @@ public class Core {
                     
                     if (ydiff < 0) {
                         p2.setCoordonnees(0, 1);
-                        y++;
+                        nbTour++;
                     }
                     
                     if (ydiff > 0) {
                         p2.setCoordonnees(0, -1);
-                        y++;
+                        nbTour++;
                     }
                     
                     if (xdiff < 0){
                         p2.setCoordonnees(1, 0);
-                        x++;
+                        nbTour++;
                     }
                     
                     if (xdiff > 0){
                         p2.setCoordonnees(-1, 0);
-                        x++;
+                        nbTour++;
                     }
                     
-                    if (xdiff >= unite || ydiff >= unite) {
+                    if (nbTour >= unite) {
                         enMouv = false;
                         p.setPosition(destination);
-                        x = 0;
-                        y = 0;
+                        nbTour = 0;
                     }
                 }
             }

@@ -25,7 +25,11 @@ public class Dessin extends Canvas {
     private Image sallesImage;
     private Image entreeImage;
     
-   
+    /**
+     * Constructeur de la classe Dessin
+     * @param labyrinthe, le labyrinthe
+     * @param sprites, la collection des sprites dans le labyrinthes
+     */
     public Dessin(ILabyrinthe labyrinthe, Collection<ISprite> sprites)
     {
         this.sprites = sprites;
@@ -37,13 +41,19 @@ public class Dessin extends Canvas {
         dessinFond();
     }
     
-     public void chargementImages(){
+    /**
+     * Méthode permettant de charger les différentes images 
+     */
+    public void chargementImages(){
     	murImage = new Image("file:icons/mur0.gif");
         entreeImage = new Image("file:icons/groundP.gif");
         sortieImage = new Image("file:icons/sortie.gif");
         sallesImage = new Image("file:icons/ground.gif");
     }
 
+    /**
+     * Méthode permettant d'associer les images à une position
+     */
     public void dessinFond() {
         //Dessin Mur
         for(int i = 0; i < labyrinthe.getLargeur(); i++){

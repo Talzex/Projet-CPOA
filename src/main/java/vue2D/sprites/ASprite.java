@@ -11,7 +11,6 @@ import personnages.IPersonnage;
 import javafx.scene.image.Image;
 import labyrinthe.ILabyrinthe;
 import labyrinthe.ISalle;
-import labyrinthe.Salle;
 
 /**
  *
@@ -26,6 +25,11 @@ public abstract class ASprite implements ISprite {
     public int x = 0;
     public int y = 0;
 
+    /**
+     * Constructeur de la classe ASprite
+     * @param sprite, le sprite
+     * @param labyrinthe, le labyrinthe
+     */
     public ASprite(IPersonnage sprite, ILabyrinthe labyrinthe) {
         this.sprite = sprite;
         this.labyrinthe = labyrinthe;
@@ -33,11 +37,20 @@ public abstract class ASprite implements ISprite {
         y = sprite.getPosition().getX() * unite;
     }
 
+    /**
+     * Méthode permettant d'associer l'image d'un sprite à une position
+     * @param g, le GraphicsContext
+     */
     @Override
     public void dessiner(GraphicsContext g) {
         g.drawImage(spriteImg, unite * sprite.getPosition().getX(), unite * sprite.getPosition().getY() - (spriteImg.getHeight() / 2));
     }
 
+    /**
+     * Méthode permettant de définir la position en pixel
+     * @param xpix, l'abscisse en pixel
+     * @param ypix, l'ordonnée en pixel
+     */
     @Override
     public void setCoordonnees(int xpix, int ypix) {
         x += xpix;
@@ -45,6 +58,7 @@ public abstract class ASprite implements ISprite {
     }
 
     @Override
+    // renvoie sa position courante
     public ISalle getPosition() {
         return sprite.getPosition();
     }

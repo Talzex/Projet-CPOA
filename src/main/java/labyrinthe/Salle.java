@@ -14,21 +14,39 @@ public class Salle implements ISalle{
     public int x;
     public int y;
     
+    /**
+     * Constructeur de Salle
+     * @param x,abscisse
+     * @param y,ordonnée
+     */
     public Salle(int x, int y){
         this.x = x;
         this.y = y;
     }
     
+    /**
+     * Retourne l'abscisse d'une Salle
+     * @return x, l'abscisse
+     */
     @Override
     public int getX() {
         return x;
     }
-
+    
+    /**
+     * Retourne l'ordonnée d'une Salle
+     * @return y, l'ordonnée
+     */
     @Override
     public int getY() {
         return y;
     }
 
+    /**
+     * Méthode permettant de vérifier si une ISalle est adjacente au personnage
+     * @param autre, la salle a tester
+     * @return true si autre est adjacente, faux sinon
+     */
     @Override
     public boolean estAdjacente(ISalle autre) {
         return this.x == autre.getX() - 1 && this.y == autre.getY() ||

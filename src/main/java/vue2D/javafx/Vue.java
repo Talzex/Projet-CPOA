@@ -18,6 +18,10 @@ public class Vue extends AVue implements IVue {
     ILabyrinthe labyrinthe;
     public Scene scene;
 
+    /**
+     * Constructeur de la classe Vue
+     * @param labyrinthe, le labyrinthe
+     */
     public Vue(ILabyrinthe labyrinthe) {
         this.labyrinthe = labyrinthe;
         dessin = new Dessin(labyrinthe, this);
@@ -26,6 +30,9 @@ public class Vue extends AVue implements IVue {
         root.getChildren().add(dessin);
     }
 
+    /**
+     * Méthode permettant de dessiner les différent éléments du labyrinthe
+     */
     @Override
     public void dessiner() {
         // recopie du fond (image); murs + salles
@@ -35,6 +42,11 @@ public class Vue extends AVue implements IVue {
         }
     }
 
+    /**
+     * Méthode permettant d'associer le sprite avec la gestion de clavier
+     * @param sprite, le sprite à associer
+     * @return true quand c'est l'association est faite
+     */
     @Override
     public boolean add(ISprite sprite) {
         super.add(sprite);

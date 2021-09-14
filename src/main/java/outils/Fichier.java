@@ -28,11 +28,21 @@ public class Fichier {
         return -1;
     }
     
+    /**
+     * Méthode permettant de vérifier si un fichier respecte les contraintes
+     * @param nomFichier, le nom du fichier à tester
+     * @return true si le fichier respecte les contraintes, faux sinon
+     */
     public static boolean testValide(String nomFichier){
         File f = new File(nomFichier);
         return testCoordonneesSallesFichier(f) && testPasDeDoublonFichier(f);
     }
     
+    /**
+     * Méthode permettant de tester si un fichier contient des doublons
+     * @param f, le fichier à tester
+     * @return true si le fichier n'a pas de doublons, faux sinon
+     */
     public static boolean testPasDeDoublonFichier(File f) {
 
         Scanner sc = null;
@@ -68,6 +78,12 @@ public class Fichier {
         return true;
     }
     
+    /**
+     * Méthode permettant de tester si un fichier contient des coordonnées négatives
+     * ou hors-champs
+     * @param f, le fichier à tester
+     * @return true si le fichier contient des coordonnées positives dans le champs, faux sinon
+     */
     public static boolean testCoordonneesSallesFichier(File f) {
          Scanner sc = null;
         int largeur = 0;
