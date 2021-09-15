@@ -17,7 +17,7 @@ import vue2D.sprites.MonstreSprite;
  */
 public class Core {
 
-    ArrayList<ISprite> personnages = new ArrayList<>();
+    ArrayList<ISprite> AllPerso = new ArrayList<>();
     ILabyrinthe labyrinthe;
 
     protected void initLabyrinthe() {
@@ -31,21 +31,23 @@ public class Core {
         IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
         ISprite heros = new HerosSprite(h, labyrinthe);
         vue.add(heros);
-        personnages.add(heros);
+        AllPerso.add(heros);
+        
         for (int i = 0; i < 10; i++) {
             IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
             ISprite monstre = new MonstreSprite(m, labyrinthe);
             vue.add(monstre);
-            personnages.add(monstre);
+            AllPerso.add(monstre);
 
         }
+        System.out.println(vue.size());
 
     }
 
     protected void jeu(IVue vue) {
         // boucle principale
         ISalle destination = null;
-        ISprite heros = personnages.get(0);
+        ISprite heros = AllPerso.get(0);
         while (!labyrinthe.getSortie().equals(heros.getPosition())) {
             // choix et deplacement
             for (IPersonnage p : vue) {

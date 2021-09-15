@@ -73,7 +73,7 @@ public abstract class ASprite implements ISprite {
             enMouv = false;
         }
 
-        g.drawImage(spriteImg, x, y - (spriteImg.getHeight() / 2));
+        g.drawImage(spriteImg, x, y,unite,unite);
     }
 
     /**
