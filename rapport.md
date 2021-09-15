@@ -35,3 +35,6 @@ Durant cette séance, j'ai peut-être trouvé une solution avec Julian , mais de
 
 ## 11 - Seance 11 (14/09/2021 14h00 à 16h00)
 Durant cette séance j'ai corigé les différents bugs de la solution pour le niveau 19, comme cela m'a pris du temps, j'ai décider de faire la javadoc le reste de la séance.
+
+## 12 - Seance 12 (15/09/2021 14h00 à 16h00)
+Durant la première partie j'ai pu enfin terminé complètement le niveau 19, ce niveau a été fais avec la participation de Julian et surtout grâce à l'aide du professeur. Je vais donc commencer le niveau 20.

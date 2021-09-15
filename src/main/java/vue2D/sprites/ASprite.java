@@ -24,37 +24,69 @@ public abstract class ASprite implements ISprite {
     private final int unite = 15;
     public int x = 0;
     public int y = 0;
+    public boolean enMouv;
 
     /**
      * Constructeur de la classe ASprite
+     *
      * @param sprite, le sprite
      * @param labyrinthe, le labyrinthe
      */
     public ASprite(IPersonnage sprite, ILabyrinthe labyrinthe) {
         this.sprite = sprite;
         this.labyrinthe = labyrinthe;
-        x = sprite.getPosition().getX() * unite;
-        y = sprite.getPosition().getX() * unite;
+        this.setCoordonnees(sprite.getPosition().getX() * unite, sprite.getPosition().getY() * unite);
+
     }
 
     /**
-     * Méthode permettant d'associer l'image d'un sprite à une position
+     * Méthode permettant de dessiner le sprite
+     *
      * @param g, le GraphicsContext
      */
     @Override
     public void dessiner(GraphicsContext g) {
-        g.drawImage(spriteImg, unite * sprite.getPosition().getX(), unite * sprite.getPosition().getY() - (spriteImg.getHeight() / 2));
+
+        int SalleChoisiex = sprite.getPosition().getX() * unite;
+        int SalleChoisiey = sprite.getPosition().getY() * unite;
+        int xdiff = x - SalleChoisiex;
+        int ydiff = y - SalleChoisiey;
+
+        if (ydiff < 0) {
+            y++;
+            enMouv = true;
+        }
+        if (ydiff > 0) {
+            y--;
+            enMouv = true;
+        }
+        if (xdiff < 0) {
+            x++;
+            enMouv = true;
+        }
+        if (xdiff > 0) {
+            x--;
+            enMouv = true;
+
+        }
+        if (xdiff == 0 && ydiff == 0) {
+            enMouv = false;
+        }
+
+        g.drawImage(spriteImg, x, y - (spriteImg.getHeight() / 2));
     }
 
     /**
-     * Méthode permettant de définir la position en pixel
-     * @param xpix, l'abscisse en pixel
-     * @param ypix, l'ordonnée en pixel
+     * Méthode permettant de définir les coordonnées graphique su sprite
+     *
+     * @param xpix, l'abscisse
+     * @param ypix, l'ordonnée
      */
     @Override
-    public void setCoordonnees(int xpix, int ypix) {
-        x += xpix;
-        y += ypix;
+    public void setCoordonnees(int xpix, int ypix
+    ) {
+        x = xpix;
+        y = ypix;
     }
 
     @Override
@@ -65,12 +97,14 @@ public abstract class ASprite implements ISprite {
 
     @Override
     // definit sa position courante
-    public void setPosition(ISalle s) {
+    public void setPosition(ISalle s
+    ) {
         sprite.setPosition(s);
     }
 
     @Override
-    public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
+    public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles
+    ) {
         return sprite.faitSonChoix(sallesAccessibles);
     }
 }

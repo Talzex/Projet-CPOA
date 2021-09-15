@@ -17,8 +17,6 @@ import vue2D.sprites.MonstreSprite;
  */
 public class Core {
 
-    ISprite heros;
-    ISprite monstre;
     ArrayList<ISprite> personnages = new ArrayList<>();
     ILabyrinthe labyrinthe;
 
@@ -31,14 +29,15 @@ public class Core {
     protected void initSprites(IVue vue) {
         // creation du heros 
         IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
-        this.heros = new HerosSprite(h, labyrinthe);
-        vue.add(this.heros);
+        ISprite heros = new HerosSprite(h, labyrinthe);
+        vue.add(heros);
         personnages.add(heros);
         for (int i = 0; i < 10; i++) {
             IPersonnage m = new personnages.Monstre(labyrinthe.getSortie());
-            this.monstre = new MonstreSprite(m, labyrinthe);
+            ISprite monstre = new MonstreSprite(m, labyrinthe);
+            vue.add(monstre);
             personnages.add(monstre);
-            vue.add(this.monstre);
+
         }
 
     }
@@ -46,50 +45,16 @@ public class Core {
     protected void jeu(IVue vue) {
         // boucle principale
         ISalle destination = null;
-        int nbTour = 0;
+        ISprite heros = personnages.get(0);
         while (!labyrinthe.getSortie().equals(heros.getPosition())) {
             // choix et deplacement
             for (IPersonnage p : vue) {
-                ISprite p2 = (ISprite) p;
-                boolean enMouv = false;
                 Collection<ISalle> sallesAccessibles = labyrinthe.sallesAccessibles(p);
                 destination = p.faitSonChoix(sallesAccessibles); // on demande au personnage de faire son choix de salle
-                
-                if(!destination.equals(p.getPosition())){
-                    enMouv = true;
-                }
-                if (enMouv) {
-                    int unite = 15;
-                    int xdiff = p.getPosition().getX() - destination.getX();
-                    int ydiff = p.getPosition().getY() - destination.getY();
-                    
-                    if (ydiff < 0) {
-                        p2.setCoordonnees(0, 1);
-                        nbTour++;
-                    }
-                    
-                    if (ydiff > 0) {
-                        p2.setCoordonnees(0, -1);
-                        nbTour++;
-                    }
-                    
-                    if (xdiff < 0){
-                        p2.setCoordonnees(1, 0);
-                        nbTour++;
-                    }
-                    
-                    if (xdiff > 0){
-                        p2.setCoordonnees(-1, 0);
-                        nbTour++;
-                    }
-                    
-                    if (nbTour >= unite) {
-                        enMouv = false;
-                        p.setPosition(destination);
-                        nbTour = 0;
-                    }
-                }
+                p.setPosition(destination); // deplacement
             }
+
+
             // detection des collisions
             boolean collision = false;
             ISprite monstre = null;
@@ -111,7 +76,9 @@ public class Core {
 
             temporisation(50);
         }
-        System.out.println("Gagné!");
+
+        System.out.println(
+                "Gagné!");
     }
 
     private void chargementLaby(String fic) {
