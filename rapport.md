@@ -28,13 +28,13 @@ Durant cette séance j'ai à la fois tenté de faire fonctionner correctement le
 Avec Julian, nous avons trouvé la solution pour déplacer le personnage et donc le monstre. L'erreur provenait d'une mauvaise interprétation du niveau où il fallait implémenter à la fois les méthodes de la classe ISprite ET IPersonnage dans la classe ASprite. Cette erreur m'a coûté environ 3 séances, mais j'ai de tout même fais des niveaux en parallèle de ce problème.
 
 ## 9 - Seance 9 (13/09/2021 14h00 à 16h00)
-Durant cette séance j'ai éffectué les derniers niveaux de l'objectif 4, je suis à l'objectif 5 qui semble beaucoup plus dur. J'ai commencé l'exercice 19, mais je l'ai trouvé difficile.
+Durant cette séance, j'ai effectué les derniers niveaux de l'objectif 4, je suis à l'objectif 5 qui semble beaucoup plus dur. J'ai commencé l'exercice 19, mais je l'ai trouvé difficile.
 
 ## 10 - Seance 10 (14/09/2021 8h00 à 10h00)
-Durant cette séance, j'ai peut-être trouvé une solution avec Julian , mais de mon côté elle ne fonctionne pas, je vais revoir mon code à la séance de cette après-midi. Ce niveau est complexe mais pas impossible.
+Durant cette séance, j'ai peut-être trouvé une solution avec Julian, mais de mon côté elle ne fonctionne pas, je vais revoir mon code à la séance de cette après-midi. Ce niveau est complexe mais pas impossible.
 
 ## 11 - Seance 11 (14/09/2021 14h00 à 16h00)
-Durant cette séance j'ai corigé les différents bugs de la solution pour le niveau 19, comme cela m'a pris du temps, j'ai décider de faire la javadoc le reste de la séance.
+Durant cette séance, j'ai corrigé les différents bugs de la solution pour le niveau 19, comme cela m'a pris du temps, j'ai décidé de faire la javadoc le reste de la séance.
 
 ## 12 - Seance 12 (15/09/2021 14h00 à 16h00)
-Durant la première partie j'ai pu enfin terminé complètement le niveau 19, ce niveau a été fais avec la participation de Julian et surtout grâce à l'aide du professeur. Je vais donc commencer le niveau 20.
+Durant la première partie, j'ai pu enfin terminer complètement le niveau 19, ce niveau a été fait avec la participation de Julian et surtout grâce à l'aide du professeur. Je vais donc commencer le niveau 20. Le 20 a été un niveau plutôt, j'ai juste eu un petit bug que j'ai réglé chez moi, mais le code du niveau 20 n'a pas été touché. Je considère donc que j'ai terminé le niveau 20 durant la séance.

@@ -29,7 +29,7 @@ public class Heros extends APersonnage {
      * Méthode permettant de vérifier si la salle souhaitée par le joueur est
      * bien accessible
      * @param sallesAccessibles, la collection des sallesAccessibles pour le héros
-     * @return la salleChoisie si elle est accessible, la position actuelle si elle n'est pas.
+     * @return la salleChoisie si elle est accessible, sinon la position du héros
      */
     @Override
     public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {

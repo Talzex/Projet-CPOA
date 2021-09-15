@@ -20,12 +20,19 @@ public class Core {
     ArrayList<ISprite> AllPerso = new ArrayList<>();
     ILabyrinthe labyrinthe;
 
+    /**
+     * Initialisation du labyrinthe
+     */
     protected void initLabyrinthe() {
         // creation du labyrinthe
         labyrinthe = new labyrinthe.Labyrinthe();
         chargementLaby("labys/level3.txt");
     }
 
+    /**
+     * Initialisation des sprites 
+     * @param vue, la vue
+     */
     protected void initSprites(IVue vue) {
         // creation du heros 
         IPersonnage h = new personnages.Heros(labyrinthe.getEntree());
@@ -40,8 +47,6 @@ public class Core {
             AllPerso.add(monstre);
 
         }
-        System.out.println(vue.size());
-
     }
 
     protected void jeu(IVue vue) {
@@ -79,8 +84,7 @@ public class Core {
             temporisation(50);
         }
 
-        System.out.println(
-                "Gagné!");
+        System.out.println("Gagné!");
     }
 
     private void chargementLaby(String fic) {
