@@ -65,6 +65,3 @@ Complété 15/09/2021 16h45
 
 ## Niveau 22 :
 Complété 15/09/2021 16h55
-
-## Niveau 23 :
-En cours

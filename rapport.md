@@ -37,4 +37,7 @@ Durant cette séance, j'ai peut-être trouvé une solution avec Julian, mais de 
 Durant cette séance, j'ai corrigé les différents bugs de la solution pour le niveau 19, comme cela m'a pris du temps, j'ai décidé de faire la javadoc le reste de la séance.
 
 ## 12 - Seance 12 (15/09/2021 14h00 à 16h00)
-Durant la première partie, j'ai pu enfin terminer complètement le niveau 19, ce niveau a été fait avec la participation de Julian et surtout grâce à l'aide du professeur. Je vais donc commencer le niveau 20. Le 20 a été un niveau plutôt, j'ai juste eu un petit bug que j'ai réglé chez moi, mais le code du niveau 20 n'a pas été touché. Je considère donc que j'ai terminé le niveau 20 durant la séance.
+Durant la première partie, j'ai pu enfin terminer complètement le niveau 19, ce niveau a été fait avec la participation de Julian et surtout grâce à l'aide du professeur. Je vais donc commencer le niveau 20. Le 20 a été un niveau plutôt, j'ai juste eu un petit bug que j'ai réglé chez moi, mais le code du niveau 20 n'a pas été touché. Je considère donc que j'ai terminé le niveau 20 durant la séance. 
+
+## 13 - Seance 13 (16/09/2021 8h00 à 10h00)
+Durant cette séance je pensais avoir réussi à faire le LabyrintheGraphe du niveau 23. Seulement j'ai eu une erreur entre l'utilisation de la classe Labyrinthe et la classe LabyrintheGraphe pour faire le labyrinthe j'ai passé la moitié de la séance à essayer de la trouver mais je n'ai pas réussi. Je pense que je vais supprimer la classe Labyrinthe et corriger les quelques bugs d'affichage des monstres lors du déplacement, cet après-midi.
