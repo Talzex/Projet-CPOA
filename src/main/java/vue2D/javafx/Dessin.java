@@ -18,7 +18,6 @@ public class Dessin extends Canvas {
     private ILabyrinthe labyrinthe;
     private final int unite = 15;
     private GraphicsContext tampon;
-    //private Image murImage;
     private Image sortieImage;
     private Image sallesImage;
     private Image entreeImage;
@@ -53,7 +52,7 @@ public class Dessin extends Canvas {
     /**
      * Méthode permettant d'associer les images à une position
      */
-    public void dessinFond() {
+    public void dessinLaby() {
         tampon.drawImage(solImage, 0, 0, unite * labyrinthe.getLargeur(), unite * labyrinthe.getHauteur());
 
         //Dessin Salles
@@ -66,7 +65,6 @@ public class Dessin extends Canvas {
             if (salles.getX() + portee > xHeros && salles.getX() - portee < xHeros && salles.getY() + portee > yHeros && salles.getY() - portee < yHeros) {
                 tampon.drawImage(sallesImage, unite * salles.getX(), unite * salles.getY());
             }
-
         }
 
         //Dessin Entree
