@@ -11,6 +11,10 @@ import java.util.Scanner;
 public class Fichier {
     Scanner sc=null;
     
+    /**
+     * Constructeur de la classe Fichier
+     * @param nomFichier, le nom du fichier
+     */
     public Fichier(String nomFichier){
         try{
 	    sc = new Scanner(new File(nomFichier));

@@ -49,6 +49,10 @@ public class Core {
         }
     }
 
+    /**
+     * Boucle de jeu
+     * @param vue, la vue
+     */
     protected void jeu(IVue vue) {
         // boucle principale
         ISalle destination = null;
@@ -95,6 +99,10 @@ public class Core {
         }
     }
 
+    /**
+     * Méthode pour temporiser
+     * @param nb, le temps de temporisation
+     */
     protected void temporisation(int nb) {
         try {
             Thread.sleep(nb); // pause de nb millisecondes
