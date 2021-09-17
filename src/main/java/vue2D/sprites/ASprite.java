@@ -25,6 +25,7 @@ public abstract class ASprite implements ISprite {
     public int x = 0;
     public int y = 0;
     public boolean enMouv;
+    public ISalle destination;
 
     /**
      * Constructeur de la classe ASprite
@@ -35,7 +36,8 @@ public abstract class ASprite implements ISprite {
     public ASprite(IPersonnage sprite, ILabyrinthe labyrinthe) {
         this.sprite = sprite;
         this.labyrinthe = labyrinthe;
-        this.setCoordonnees(sprite.getPosition().getX() * unite, sprite.getPosition().getY() * unite);
+        x = sprite.getPosition().getX() * unite;
+        y = sprite.getPosition().getY() * unite;
 
     }
 
@@ -46,34 +48,7 @@ public abstract class ASprite implements ISprite {
      */
     @Override
     public void dessiner(GraphicsContext g) {
-
-        int SalleChoisiex = sprite.getPosition().getX() * unite;
-        int SalleChoisiey = sprite.getPosition().getY() * unite;
-        int xdiff = x - SalleChoisiex;
-        int ydiff = y - SalleChoisiey;
-
-        if (ydiff < 0) {
-            y++;
-            enMouv = true;
-        }
-        if (ydiff > 0) {
-            y--;
-            enMouv = true;
-        }
-        if (xdiff < 0) {
-            x++;
-            enMouv = true;
-        }
-        if (xdiff > 0) {
-            x--;
-            enMouv = true;
-
-        }
-        if (xdiff == 0 && ydiff == 0) {
-            enMouv = false;
-        }
-
-        g.drawImage(spriteImg, x, y,unite,unite);
+        g.drawImage(spriteImg, x, y, unite, unite);
     }
 
     /**
@@ -83,10 +58,30 @@ public abstract class ASprite implements ISprite {
      * @param ypix, l'ordonnée
      */
     @Override
-    public void setCoordonnees(int xpix, int ypix
-    ) {
-        x = xpix;
-        y = ypix;
+    public void setCoordonnees(int xpix, int ypix) {
+        double xdiff = x - xpix;
+        double ydiff = y - ypix;
+
+        if (ydiff < 0) {
+            y++;
+
+        }
+        if (ydiff > 0) {
+            y--;
+
+        }
+        if (xdiff < 0) {
+            x++;
+
+        }
+        if (xdiff > 0) {
+            x--;
+
+        }
+        if (xdiff == 0 && ydiff == 0) {
+            enMouv = false;
+        }
+
     }
 
     @Override
@@ -97,14 +92,20 @@ public abstract class ASprite implements ISprite {
 
     @Override
     // definit sa position courante
-    public void setPosition(ISalle s
-    ) {
-        sprite.setPosition(s);
+    public void setPosition(ISalle s) {
+        
+        if(!enMouv){
+            enMouv = true;
+            sprite.setPosition(s);
+            destination = s;
+        }
+        if(enMouv){
+            setCoordonnees(destination.getX()*unite, destination.getY()*unite);
+        }
     }
 
     @Override
-    public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles
-    ) {
+    public ISalle faitSonChoix(Collection<ISalle> sallesAccessibles) {
         return sprite.faitSonChoix(sallesAccessibles);
     }
 }
